@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package edu.berkeley.cs160.finalprog;
+package edu.berkeley.cs160.betterbet;
 
 public final class R {
     public static final class attr {
