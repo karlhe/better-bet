@@ -1,4 +1,4 @@
-package edu.berkeley.cs160.finalprog;
+package edu.berkeley.cs160.betterbet;
 
 import android.app.Activity;
 import android.os.Bundle;
