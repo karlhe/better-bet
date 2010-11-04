@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
+
+
+
+<Spinner android:id="@+id/GroupSpinner" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content"
+android:prompt="@string/groups">
+</Spinner>
+
+
+
+
+<Button android:text="Instructions" android:id="@+id/Button01" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<Button android:text="Play" android:id="@+id/Button02" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+</LinearLayout>
