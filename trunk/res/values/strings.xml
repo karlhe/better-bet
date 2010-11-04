@@ -2,4 +2,12 @@
 <resources>
     <string name="hello">Hello World, BetterBet!</string>
     <string name="app_name">Better Bet</string>
+    <string name="groups">Choose a group</string>
+    <string-array name="groups">
+        <item>College</item>
+        <item>Co-Workers</item>
+        <item>Family</item>
+        <item>Friends</item>
+        <item>New Group</item>
+    </string-array>
 </resources>
