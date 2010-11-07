@@ -1,66 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-android:layout_width="fill_parent"
-android:layout_height="fill_parent"
-android:orientation="vertical"
-xmlns:android="http://schemas.android.com/apk/res/android"
-android:gravity="center"
->
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical"
+  android:gravity="center"
+  >
+
 <LinearLayout
-android:layout_width="fill_parent"
-android:layout_height="wrap_content"
-android:orientation="horizontal"
->
-<TextView
-android:id="@+id/username_text"
-android:layout_width="100px"
-android:layout_height="wrap_content"
-android:text="Username:"
-android:layout_gravity="center_horizontal"
-android:gravity="center_horizontal"
->
-</TextView>
-<EditText
-android:id="@+id/username_value"
-android:layout_width="100px"
-android:layout_height="wrap_content"
-android:textSize="18sp"
-android:layout_gravity="center_horizontal"
-android:gravity="center_horizontal"
->
-</EditText>
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:orientation="horizontal"
+  >
+  <TextView
+    android:id="@+id/username_text"
+    android:layout_width="100px"
+    android:layout_height="wrap_content"
+    android:text="Username:"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    />
+  <EditText
+    android:id="@+id/username_value"
+    android:layout_width="100px"
+    android:layout_height="wrap_content"
+    android:textSize="18sp"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    />
 </LinearLayout>
 <LinearLayout
-android:layout_width="fill_parent"
-android:layout_height="wrap_content"
-android:orientation="horizontal"
->
-<TextView
-android:id="@+id/password_text"
-android:layout_width="100px"
-android:layout_height="wrap_content"
-android:text="Password:"
-android:layout_gravity="center_horizontal"
-android:gravity="center_horizontal"
->
-</TextView>
-<EditText
-android:id="@+id/password_value"
-android:layout_width="100px"
-android:layout_height="wrap_content"
-android:textSize="18sp"
-android:password="true"
-android:layout_gravity="center_horizontal"
-android:gravity="center_horizontal"
->
-</EditText>
-<Button
-android:id="@+id/submit_button"
-android:layout_width="75px"
-android:layout_height="wrap_content"
-android:text="Enter!"
-android:layout_gravity="center_horizontal"
->
-</Button>
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:orientation="horizontal"
+  >
+  <TextView
+    android:id="@+id/password_text"
+    android:layout_width="100px"
+    android:layout_height="wrap_content"
+    android:text="Password:"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    />
+  <EditText
+    android:id="@+id/password_value"
+    android:layout_width="100px"
+    android:layout_height="wrap_content"
+    android:textSize="18sp"
+    android:password="true"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    />
+  <Button
+    android:id="@+id/submit_button"
+    android:layout_width="75px"
+    android:layout_height="wrap_content"
+    android:text="Enter!"
+    android:layout_gravity="center_horizontal"
+    />
 </LinearLayout>
+
 </LinearLayout>

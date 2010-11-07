@@ -5,4 +5,10 @@
   android:layout_height="wrap_content"
   android:orientation="vertical">
   
+<TextView
+  android:id="@+id/timer"
+  android:text="TIME ME"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  />
 </LinearLayout>
