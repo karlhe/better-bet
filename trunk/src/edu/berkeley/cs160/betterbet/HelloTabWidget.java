@@ -6,9 +6,8 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.TabHost;
 
-public class BetterBet extends TabActivity {
-    /** Called when the activity is first created. */
-    public void onCreate(Bundle savedInstanceState) {
+public class HelloTabWidget extends TabActivity {
+	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.main);
 

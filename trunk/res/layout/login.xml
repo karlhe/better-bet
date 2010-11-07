@@ -50,4 +50,6 @@ android:layout_x="106px"
 android:layout_y="127px"
 >
 </TextView>
+
+
 </AbsoluteLayout>
