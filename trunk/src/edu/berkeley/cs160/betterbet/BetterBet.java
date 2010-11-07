@@ -1,15 +1,10 @@
 package edu.berkeley.cs160.betterbet;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.content.res.Resources.NotFoundException;
 import android.os.Bundle;
 import android.widget.TabHost;
-import android.widget.TabWidget;
 
 	
 public class BetterBet extends TabActivity {
