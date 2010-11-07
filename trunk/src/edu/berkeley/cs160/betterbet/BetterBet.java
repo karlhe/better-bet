@@ -1,18 +1,15 @@
 package edu.berkeley.cs160.betterbet;
 
-import android.app.Activity;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.content.res.Resources.NotFoundException;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.Toast;
 import android.widget.TabHost;
+import android.widget.TabWidget;
 
 	
 public class BetterBet extends TabActivity {
@@ -23,10 +20,10 @@ public class BetterBet extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-	    Resources res = getResources(); // Resource object to get Drawables
+	    Resources res = getResources();  // Resource object to get Drawables
 	    TabHost tabHost = getTabHost();  // The activity TabHost
-	    TabHost.TabSpec spec;  // Resusable TabSpec for each tab
-	    Intent intent; // Reusable Intent for each tab
+	    TabHost.TabSpec spec;            // Reusable TabSpec for each tab
+	    Intent intent;                   // Reusable Intent for each tab
 
 	    // Create an Intent to launch an Activity for the tab (to be reused)
 	    intent = new Intent().setClass(this, PlayActivity.class);
