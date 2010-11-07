@@ -17,7 +17,7 @@ public class Login extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         
-        Button submitButton = (Button)findViewById(R.id.submit);
+        Button submitButton = (Button)findViewById(R.id.submit_button);
         submitButton.setOnClickListener(submitButtonListener);
     }
     
