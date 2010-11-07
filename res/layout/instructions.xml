@@ -6,15 +6,48 @@
   android:orientation="vertical">
   
 <TextView android:text="Using Better Bet While Playing Poker" 
-android:id="@+id/TextView01" android:layout_width="wrap_content" 
-android:layout_height="wrap_content" android:gravity="center">
+android:id="@+id/TextView01" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:textSize="25sp"
+android:gravity="center">
 </TextView>
 
-<TextView android:text="Better Bet allows you to keep track of who won each round. The timer..." 
-android:id="@+id/TextView02" android:layout_width="wrap_content" 
-android:layout_height="wrap_content"></TextView>
+<FrameLayout android:id="@+id/FrameLayout01" 
+android:layout_width="wrap_content" 
+android:layout_height="8px">
+</FrameLayout>
 
-<Button android:text="Back" android:id="@+id/backToPlay1Button" android:layout_width="wrap_content" 
-android:layout_height="wrap_content" android:gravity="bottom"></Button>
+<TextView android:text="Per round, select the winner from a drop-down menu. There are two timers, the round and game timer. Available buttons are:" 
+android:id="@+id/TextView01" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content">
+</TextView>
+
+<FrameLayout android:id="@+id/FrameLayout02" 
+android:layout_width="wrap_content" 
+android:layout_height="8px">
+</FrameLayout>
+
+<TextView android:text="1. GAME: both timers begin, indicating the game has started. 
+2. START ROUND: resets the round timer. The game timer will continue. 
+3. PAUSE: both timers pause.
+4. RESUME: both timers resume."
+android:id="@+id/TextView02" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content">
+</TextView>
+
+<FrameLayout android:id="@+id/FrameLayout03" 
+android:layout_width="wrap_content" 
+android:layout_height="8px">
+</FrameLayout>
+
+<Button android:text="Back to Play Screen" 
+android:id="@+id/backToPlay1Button" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content"
+android:gravity="center">
+</Button>
 
 </LinearLayout>

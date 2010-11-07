@@ -1,15 +1,21 @@
 package edu.berkeley.cs160.betterbet;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.Chronometer.OnChronometerTickListener;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+
 
 public class PlayActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
@@ -18,27 +24,33 @@ public class PlayActivity extends Activity {
 		TextView textview = new TextView(this);
 		textview.setText("This is the Play tab");
 		setContentView(R.layout.play1);
+		
 		Spinner spinner = (Spinner) findViewById(R.id.GroupSpinner);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 				this, R.array.groups, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinner.setAdapter(adapter);
+		spinner.setAdapter(adapter);	
+		spinner.setOnItemSelectedListener(new MyOnItemSelectedListener());
 
 		Button instr = (Button) findViewById(R.id.instrButton);
 		Button play = (Button) findViewById(R.id.playButton);
 
 		instr.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				//setContentView(R.layout.instructions);
+				goToInstr(); 
 			}
 		});
 		play.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				startGame();
+				if (isGroupSelected) {
+					startGame();
+				} else {
+					Toast.makeText(getApplicationContext(), "Please indicate the group you are playing with.", Toast.LENGTH_SHORT).show();
+				}
 			}
 		});
 	}
-
+	
 	Chronometer gameTimer;
 	Chronometer roundTimer;
 	Button gameButton;
@@ -46,6 +58,41 @@ public class PlayActivity extends Activity {
 	Button pauseButton;
 	long pauseTime;
 	boolean running = false;
+	boolean isGroupSelected = false;
+	String selectedGroup;
+	
+	public class MyOnItemSelectedListener implements OnItemSelectedListener {
+
+	    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+	    	isGroupSelected = false;
+	    	selectedGroup = parent.getItemAtPosition(pos).toString();
+	    	if (selectedGroup != null) {
+	    		isGroupSelected = true;
+	    	}
+	    	if (selectedGroup == "Create New Group") {
+	    		createNewGroup();
+	    	}
+	    }
+
+	    public void onNothingSelected(AdapterView<?> parent) {
+	    	isGroupSelected = false;
+	    }
+	}
+	
+	public void createNewGroup() {
+		// do stuff
+	}
+	
+	public void goToInstr() {
+		setContentView(R.layout.instructions);
+		Button backButton = (Button) findViewById(R.id.backToPlay1Button);
+		backButton.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				//new Intent().setClass(getApplicationContext(), PlayActivity.class);
+				setContentView(R.layout.play1);
+			}
+		});
+	}
 	
 	public void startGame() {
 		setContentView(R.layout.timer);
