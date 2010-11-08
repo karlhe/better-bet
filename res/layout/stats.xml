@@ -13,7 +13,7 @@
         	android:id="@+id/stats_group_spinner"
         	android:layout_width="220px"
         	android:layout_height="wrap_content"
-        	android:prompt="@string/groups"
+        	android:prompt="@string/chooseGroup"
         	android:textSize="20px"
     		/>
     	<FrameLayout
