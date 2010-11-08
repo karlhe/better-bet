@@ -18,14 +18,17 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-
 public class PlayActivity extends Activity {
+	
+	boolean isGroupSelected = false;
+	String selectedGroup, winner;
+	boolean defaultGroupChanged = false;
+	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setGroupSelectMode();
 	}
-
+	
 	public void setGroupSelectMode() {
 		TextView textview = new TextView(this);
 		textview.setText("This is the Play tab");
@@ -35,7 +38,8 @@ public class PlayActivity extends Activity {
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 				this, R.array.groups, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinner.setAdapter(adapter);	
+		spinner.setAdapter(adapter);
+		defaultGroupChanged = false;
 		spinner.setOnItemSelectedListener(new groupSelectedListener());
 
 		Button instr = (Button) findViewById(R.id.instrButton);
@@ -58,17 +62,17 @@ public class PlayActivity extends Activity {
 		});
 	}
 	
-
-	boolean isGroupSelected = false;
-	String selectedGroup, winner;
-	
 	public class groupSelectedListener implements OnItemSelectedListener {
 
 	    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 	    	isGroupSelected = false;
 	    	selectedGroup = parent.getItemAtPosition(pos).toString();
 	    	if (selectedGroup != null) {
-	    		Toast.makeText(parent.getContext(), "You selected the group " + selectedGroup, Toast.LENGTH_SHORT).show();
+	    		if (defaultGroupChanged) {
+	    			Toast.makeText(parent.getContext(), "You selected the group " + selectedGroup, Toast.LENGTH_SHORT).show();
+	    		} else {
+	    			defaultGroupChanged = true;
+	    		}
 	    		isGroupSelected = true;
 	    	}
 	    	if (selectedGroup == "Create New Group") {
