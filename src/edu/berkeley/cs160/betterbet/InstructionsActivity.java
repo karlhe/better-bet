@@ -15,9 +15,7 @@ public class InstructionsActivity extends Activity {
         Button backButton = (Button) findViewById(R.id.backToPlay1Button);
 		backButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				Intent i = new Intent().setClass(InstructionsActivity.this, PlayActivity.class);
-				startActivity(i);
-				//setContentView(R.layout.play1);
+				finish();
 			}
 		});
     }
