@@ -4,50 +4,65 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="wrap_content"
   android:layout_height="wrap_content"
-  android:orientation="vertical"
-  android:padding="5dp">
-
-	<TextView android:id="@+id/welcome_text" android:layout_width="wrap_content"
+  android:orientation="vertical">
+  <ImageView   
+  android:layout_width="227px"
+  android:layout_height="224px"
+  android:src="@drawable/betterbetwelcome"
+  android:layout_gravity="center_horizontal"
+	android:gravity="center_horizontal"/>
+	<TextView android:id="@+id/welcome_text" 
+	android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="Welcome to BetterBet, the ultimate poker analyzer!"
-		android:textSize="30px" android:layout_gravity="center"
+		android:text="Welcome to Better Bet,  the app that will help you become a better poker player! Track your stats, keep track of your opponents, and use a live game timer while you play. Login to start now! \n"
+	android:textSize="15sp" 
+		android:layout_gravity="center"
 		android:gravity="center" />
-
-	<FrameLayout android:id="@+id/FrameLayout01"
-		android:layout_width="wrap_content" android:layout_height="20px"></FrameLayout>
-
 
 	<TextView android:id="@+id/username_text"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:textSize="20sp" android:text="Username:"
+		android:textSize="15sp" android:text="Username:"
 		android:layout_gravity="left" android:gravity="left" />
-	<FrameLayout android:id="@+id/FrameLayout02"
-		android:layout_width="5px" android:layout_height="wrap_content"></FrameLayout>
 
 	<EditText android:id="@+id/username_value"
-		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:textSize="18sp" android:layout_gravity="left"
+		android:layout_width="fill_parent" android:layout_height="30px"
+		android:textSize="12sp" android:layout_gravity="left"
 		android:gravity="left" />
-		
-		<FrameLayout android:id="@+id/FrameLayout05"
-		android:layout_width="wrap_content" android:layout_height="10px"></FrameLayout>
 
 	<TextView android:id="@+id/password_text"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:textSize="20sp" android:text="Password:"
+		android:textSize="15sp" android:text="Password:"
 		android:layout_gravity="left" android:gravity="left" />
-	<FrameLayout android:id="@+id/FrameLayout03"
-		android:layout_width="5px" android:layout_height="wrap_content"></FrameLayout>
 
 	<EditText android:id="@+id/password_value"
-		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:textSize="18sp" android:password="true"
+		android:layout_width="fill_parent" android:layout_height="30px"
+		android:textSize="12sp" android:password="true"
 		android:layout_gravity="left" android:gravity="left" />
-	<FrameLayout android:id="@+id/FrameLayout05"
-		android:layout_width="wrap_content" android:layout_height="10px"></FrameLayout>
 
-	<Button android:id="@+id/submit_button" android:layout_width="75px"
-		android:layout_height="wrap_content" android:text="Enter!"
-		android:layout_gravity="right" />
+<RelativeLayout
+android:id="@+id/widget46"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="right"
+>
+<Button
+android:id="@+id/submit_button"
+android:layout_width="75px"
+android:layout_height="wrap_content"
+android:text="Enter!"
+android:layout_alignParentTop="true"
+android:layout_alignParentRight="true"
+>
+</Button>
+<Button
+android:id="@+id/acct_button"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Create Account"
+android:layout_alignParentTop="true"
+android:layout_alignParentLeft="true"
+>
+</Button>
+</RelativeLayout>
 
 </LinearLayout>
