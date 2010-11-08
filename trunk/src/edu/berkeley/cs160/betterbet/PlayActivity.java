@@ -1,4 +1,6 @@
 package edu.berkeley.cs160.betterbet;
+import java.util.HashMap;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -21,7 +23,10 @@ import android.widget.Toast;
 public class PlayActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		setGroupSelectMode();
+	}
+
+	public void setGroupSelectMode() {
 		TextView textview = new TextView(this);
 		textview.setText("This is the Play tab");
 		setContentView(R.layout.play1);
@@ -100,8 +105,9 @@ public class PlayActivity extends Activity {
 	boolean isStarted = false;
 	boolean isRunning = false;
 	int albert, karthik, karl, melissa, samantha;
+	CharSequence[] playerList;
+	HashMap<CharSequence, Integer> scores;
 
-	
 	public void setTimerMode() {
 		setContentView(R.layout.timer);
 		gameTimer = (Chronometer) findViewById(R.id.game_timer);
@@ -112,13 +118,17 @@ public class PlayActivity extends Activity {
 		roundButton.setEnabled(false);
 		pauseButton.setEnabled(false);
 		
-		final CharSequence[] items = (CharSequence[]) getResources().getTextArray(R.array.collegeMembers);
+		playerList = (CharSequence[]) getResources().getTextArray(R.array.collegeMembers);
+		scores = new HashMap<CharSequence, Integer>();
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setTitle("Select Round Winner");
-		builder.setItems(items, new DialogInterface.OnClickListener() {
-		public void onClick(DialogInterface dialog, int item) {
-			Toast.makeText(getApplicationContext(), "You have selected "+items[item]+" as the winner", Toast.LENGTH_SHORT).show();
+		builder.setItems(playerList, new DialogInterface.OnClickListener() {
+		public void onClick(DialogInterface dialog, int player) {
+			Toast.makeText(getApplicationContext(), "You have selected "+playerList[player]+" as the winner", Toast.LENGTH_SHORT).show();
+			int current = 0;
+			if (scores.containsKey(playerList[player])) current = scores.get(playerList[player]);
+			scores.put(playerList[player], current+1);
 			restartRound();
 		}
 		});
@@ -155,6 +165,23 @@ public class PlayActivity extends Activity {
 		});
 	}
 
+	protected String formatScores() {
+		Object[] keys = scores.keySet().toArray();
+		Object[] values = scores.values().toArray();
+		String rtn = "";
+		if (keys.length > 0) {
+			rtn += "Player Scores:\n";
+			for (int i=0; i<keys.length; i++) {
+				rtn += keys[i].toString() + " : " + values[i].toString() + "\n";
+			}
+		} else {
+			rtn += "No scores were recorded.\n";
+		}
+		
+		rtn += "\nTotal Game Time: "+gameTimer.getText();
+		return rtn;
+	}
+
 	protected void startGame() {
 		roundButton.setEnabled(true);
 		pauseButton.setEnabled(true);
@@ -180,6 +207,9 @@ public class PlayActivity extends Activity {
 		
 		isRunning = false;
 		isStarted = false;
+		
+		Toast.makeText(getApplicationContext(), formatScores(), Toast.LENGTH_LONG).show();
+		setGroupSelectMode();
 	}
 	
 	protected void pauseGame() {
