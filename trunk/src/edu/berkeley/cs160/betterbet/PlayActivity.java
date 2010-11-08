@@ -37,7 +37,8 @@ public class PlayActivity extends Activity {
 
 		instr.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				goToInstr(); 
+				Intent i = new Intent().setClass(PlayActivity.this, InstructionsActivity.class);
+				startActivity(i);
 			}
 		});
 		play.setOnClickListener(new OnClickListener() {
@@ -65,10 +66,10 @@ public class PlayActivity extends Activity {
 	public class groupSelectedListener implements OnItemSelectedListener {
 
 	    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-	    	isGroupSelected = false;
 	    	selectedGroup = parent.getItemAtPosition(pos).toString();
 	    	if (selectedGroup != null) {
-	    		isGroupSelected = true;
+	        	Toast.makeText(parent.getContext(), "You selected the group " + selectedGroup, Toast.LENGTH_SHORT).show();
+    			isGroupSelected = true;
 	    	}
 	    	if (selectedGroup == "Create New Group") {
 	    		createNewGroup();
@@ -84,7 +85,7 @@ public class PlayActivity extends Activity {
 		// do stuff
 	}
 	
-	public void goToInstr() {
+	/*public void goToInstr() {
 		setContentView(R.layout.instructions);
 		Button backButton = (Button) findViewById(R.id.backToPlay1Button);
 		backButton.setOnClickListener(new OnClickListener() {
@@ -93,7 +94,7 @@ public class PlayActivity extends Activity {
 				setContentView(R.layout.play1);
 			}
 		});
-	}
+	}*/
 	
 	public void startGame() {
 		setContentView(R.layout.timer);
@@ -151,14 +152,14 @@ public class PlayActivity extends Activity {
 				this, R.array.collegeMembers, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);	
-		spinner.setOnItemSelectedListener(new winnerSelectedListener());
-		
+		spinner.setOnItemSelectedListener(new winnerSelectedListener());		
 	}
 	
 	public class winnerSelectedListener implements OnItemSelectedListener {
 
 	    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 	    	winner = parent.getItemAtPosition(pos).toString();
+        	Toast.makeText(parent.getContext(), "You selected " + winner + "as the winner", Toast.LENGTH_SHORT).show();
 	    	if (winner == "Albert") {
 	    		albert++;
 	    	} else {
