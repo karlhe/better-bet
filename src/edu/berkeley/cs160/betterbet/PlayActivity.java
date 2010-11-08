@@ -30,7 +30,7 @@ public class PlayActivity extends Activity {
 				this, R.array.groups, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);	
-		spinner.setOnItemSelectedListener(new MyOnItemSelectedListener());
+		spinner.setOnItemSelectedListener(new groupSelectedListener());
 
 		Button instr = (Button) findViewById(R.id.instrButton);
 		Button play = (Button) findViewById(R.id.playButton);
@@ -59,9 +59,10 @@ public class PlayActivity extends Activity {
 	long pauseTime;
 	boolean running = false;
 	boolean isGroupSelected = false;
-	String selectedGroup;
+	String selectedGroup, winner;
+	int albert, karthik, karl, melissa, samantha;
 	
-	public class MyOnItemSelectedListener implements OnItemSelectedListener {
+	public class groupSelectedListener implements OnItemSelectedListener {
 
 	    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 	    	isGroupSelected = false;
@@ -150,8 +151,38 @@ public class PlayActivity extends Activity {
 				this, R.array.collegeMembers, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);	
-		//spinner.setOnItemSelectedListener(new MyOnItemSelectedListener());
+		spinner.setOnItemSelectedListener(new winnerSelectedListener());
 		
+	}
+	
+	public class winnerSelectedListener implements OnItemSelectedListener {
+
+	    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+	    	winner = parent.getItemAtPosition(pos).toString();
+	    	if (winner == "Albert") {
+	    		albert++;
+	    	} else {
+	    		if (winner == "Karthik") {
+	    			karthik++;
+	    		} else {
+	    			if (winner == "Karl") {
+						karl++;
+	    			} else {
+	    				if (winner == "Melissa") {
+	    					melissa++;
+	    				} else {
+	    					if (winner == "Samantha") {
+	    						samantha++;
+	    					}
+	    				}
+	    			}
+	    		}
+	    	}
+	    }
+
+	    public void onNothingSelected(AdapterView<?> parent) {
+	    	// do nothing
+	    }
 	}
 
 
