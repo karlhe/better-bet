@@ -1,6 +1,7 @@
 package edu.berkeley.cs160.betterbet;
 import android.app.Activity;
-import android.content.Intent;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
@@ -10,7 +11,6 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Chronometer;
-import android.widget.Chronometer.OnChronometerTickListener;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,7 +44,7 @@ public class PlayActivity extends Activity {
 		play.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				if (isGroupSelected) {
-					startGame();
+					setTimerMode();
 				} else {
 					Toast.makeText(getApplicationContext(), "Please indicate the group you are playing with.", Toast.LENGTH_SHORT).show();
 				}
@@ -52,16 +52,9 @@ public class PlayActivity extends Activity {
 		});
 	}
 	
-	Chronometer gameTimer;
-	Chronometer roundTimer;
-	Button gameButton;
-	Button roundButton;
-	Button pauseButton;
-	long pauseTime;
-	boolean running = false;
+
 	boolean isGroupSelected = false;
 	String selectedGroup, winner;
-	int albert, karthik, karl, melissa, samantha;
 	
 	public class groupSelectedListener implements OnItemSelectedListener {
 
@@ -95,57 +88,76 @@ public class PlayActivity extends Activity {
 			}
 		});
 	}*/
+
+	Chronometer gameTimer;
+	Chronometer roundTimer;
+	Button gameButton;
+	Button roundButton;
+	Button pauseButton;
+	long pauseTime;
+	boolean isStarted = false;
+	boolean isRunning = false;
+	int albert, karthik, karl, melissa, samantha;
+
 	
-	public void startGame() {
+	public void setTimerMode() {
 		setContentView(R.layout.timer);
 		gameTimer = (Chronometer) findViewById(R.id.game_timer);
 		roundTimer = (Chronometer) findViewById(R.id.round_timer);
-		gameButton = (Button) findViewById(R.id.game_start_button);
-		roundButton = (Button) findViewById(R.id.round_start_button);
+		gameButton = (Button) findViewById(R.id.game_button);
+		roundButton = (Button) findViewById(R.id.round_button);
 		pauseButton = (Button) findViewById(R.id.pause_button);
-		gameTimer.setOnChronometerTickListener(new OnChronometerTickListener(){
-            public void onChronometerTick(Chronometer currentTimer) {
-            }
-        });
+		roundButton.setEnabled(false);
+		pauseButton.setEnabled(false);
+		
+		final CharSequence[] items = (CharSequence[]) getResources().getTextArray(R.array.collegeMembers);
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle("Select Round Winner");
+		builder.setItems(items, new DialogInterface.OnClickListener() {
+		public void onClick(DialogInterface dialog, int item) {
+			Toast.makeText(getApplicationContext(), items[item], Toast.LENGTH_SHORT).show();
+			restartRound();
+		}
+		});
+		final AlertDialog selectWinnerAlert = builder.create();
 		
 		gameButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				gameTimer.setBase(SystemClock.elapsedRealtime());
-				gameTimer.start();
-				roundTimer.setBase(SystemClock.elapsedRealtime());
-				roundTimer.start();
-				running = true;
-				pauseButton.setText("Pause");
+				// End the game
+				if (isStarted) {
+					endGame();
+					
+				// Start the game
+				} else {
+					startGame();
+				}
 			}
 		});
 		roundButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				if(running) {
-					roundTimer.setBase(SystemClock.elapsedRealtime());
-					roundTimer.start();
-				}
+				selectWinnerAlert.show();
 			}
 		});
 		pauseButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				if(running) {
-					pauseTime = SystemClock.elapsedRealtime();
-					roundTimer.stop();
-					gameTimer.stop();
-					pauseButton.setText("Resume");
-					running = false;
+				// Pause Game
+				if (isRunning) {
+					pauseGame();
+					
+				// Resume Game
 				} else {
-					long difference = SystemClock.elapsedRealtime() - pauseTime;
-					roundTimer.setBase(roundTimer.getBase() + difference);
-					roundTimer.start();
-					gameTimer.setBase(gameTimer.getBase() + difference);
-					gameTimer.start();
-					pauseButton.setText("Pause");
-					running = true;
+					resumeGame();
 				}
-				
 			}
 		});
+	}
+
+	protected void startGame() {
+		roundButton.setEnabled(true);
+		pauseButton.setEnabled(true);
+		pauseButton.setText("Pause");
+		gameButton.setText("End Game");
 		
 		Spinner spinner = (Spinner) findViewById(R.id.winnnerSpinner);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -153,6 +165,8 @@ public class PlayActivity extends Activity {
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);	
 		spinner.setOnItemSelectedListener(new winnerSelectedListener());		
+		isRunning = true;
+		isStarted = true;
 	}
 	
 	public class winnerSelectedListener implements OnItemSelectedListener {
@@ -185,6 +199,33 @@ public class PlayActivity extends Activity {
 	    	// do nothing
 	    }
 	}
-
-
+	
+	protected void pauseGame() {
+		roundTimer.stop();
+		gameTimer.stop();
+		
+		pauseTime = SystemClock.elapsedRealtime();
+		pauseButton.setText("Resume");
+		isRunning = false;
+	}
+	
+	protected void resumeGame() {
+		long difference = SystemClock.elapsedRealtime() - pauseTime;
+		roundTimer.setBase(roundTimer.getBase() + difference);
+		roundTimer.start();
+		gameTimer.setBase(gameTimer.getBase() + difference);
+		gameTimer.start();
+		
+		pauseButton.setText("Pause");
+		isRunning = true;		
+	}
+	
+	protected void restartRound() {
+		pauseButton.setText("Pause");
+		gameTimer.start();
+		roundTimer.setBase(SystemClock.elapsedRealtime());
+		roundTimer.start();
+		
+		isRunning = true;
+	}
 }

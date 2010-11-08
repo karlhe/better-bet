@@ -2,7 +2,7 @@
 <resources>
     <string name="hello">Hello World, BetterBet!</string>
     <string name="app_name">Better Bet</string>
-    <string name="chooseGroup">Choose a group</string>
+    <string name="chooseGroup">Choose a Group</string>
     <string-array name="groups">
         <item>College</item>
         <item>Co-Workers</item>
@@ -10,7 +10,7 @@
         <item>Friends</item>
         <item>New Group</item>
     </string-array>
-    <string name="chooseWinner">Round winner</string>
+    <string name="chooseWinner">Select Round Winner</string>
     <string-array name="collegeMembers">
         <item>Albert</item>
         <item>Karthik</item>
