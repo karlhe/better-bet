@@ -10,38 +10,55 @@
 android:id="@+id/TextView01" 
 android:layout_width="wrap_content" 
 android:layout_height="wrap_content" 
-android:textSize="25sp"
+android:textSize="30sp"
 android:gravity="center">
 </TextView>
 
 <FrameLayout android:id="@+id/FrameLayout01" 
 android:layout_width="wrap_content" 
-android:layout_height="8px">
+android:layout_height="20px">
 </FrameLayout>
 
 <TextView android:text="Per round, select the winner from a drop-down menu. There are two timers, the round and game timer. Available buttons are:" 
 android:id="@+id/TextView01" 
+android:textSize="18sp"
 android:layout_width="wrap_content" 
 android:layout_height="wrap_content">
 </TextView>
 
 <FrameLayout android:id="@+id/FrameLayout02" 
 android:layout_width="wrap_content" 
-android:layout_height="8px">
+android:layout_height="20px">
 </FrameLayout>
 
-<TextView android:text="1. GAME: both timers begin, indicating the game has started. 
-2. START ROUND: resets the round timer. The game timer will continue. 
-3. PAUSE: both timers pause.
-4. RESUME: both timers resume."
+<TextView android:text="1. GAME: both timers begin, indicating the game has started."
 android:id="@+id/TextView02" 
+android:textSize="18sp"
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content">
+</TextView>
+<TextView android:text="2. START ROUND: resets the round timer. The game timer will continue."
+android:id="@+id/TextView03" 
+android:textSize="18sp"
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content">
+</TextView>
+<TextView android:text="3. PAUSE: both timers pause."
+android:id="@+id/TextView04" 
+android:textSize="18sp"
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content">
+</TextView>
+<TextView android:text="4. RESUME: both timers resume."
+android:id="@+id/TextView05" 
+android:textSize="18sp"
 android:layout_width="wrap_content" 
 android:layout_height="wrap_content">
 </TextView>
 
 <FrameLayout android:id="@+id/FrameLayout03" 
 android:layout_width="wrap_content" 
-android:layout_height="8px">
+android:layout_height="15px">
 </FrameLayout>
 
 <Button android:text="Back to Play Screen" 
