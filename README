@@ -1,3 +1,10 @@
+BETTERBET is a poker analyzing application that helps users keep track of their statistics and opponents.
+Some features are:
+- Live Game Timer (keep track of time and rounds won)
+- Rules (for learning about different types of poker games)
+- Opponents (keeping track of the people you play with and their strategies)
+- Stats (to keep track of your own statistics)
+
 This is an Interactive Prototype made for demonstrating and testing, so many of the functions do not actually work. Here are the limitations:
 
 Login Screen:
