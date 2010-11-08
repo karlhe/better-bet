@@ -1,6 +1,5 @@
 package edu.berkeley.cs160.betterbet;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,7 +13,7 @@ public class InstructionsActivity extends Activity {
         
         Button backButton = (Button) findViewById(R.id.backToPlay1Button);
 		backButton.setOnClickListener(new OnClickListener() {
-			public void onClick(View arg0) {
+			public void onClick(View v) {
 				finish();
 			}
 		});

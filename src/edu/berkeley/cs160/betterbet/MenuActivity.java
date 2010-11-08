@@ -1,6 +1,5 @@
 package edu.berkeley.cs160.betterbet;
 
-import android.app.Activity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;
