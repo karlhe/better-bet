@@ -1,0 +1,15 @@
+This is an Interactive Prototype made for demonstrating and testing, so many of the functions do not actually work. Here are the limitations:
+
+Login Screen:
+- "Create account" button does not work
+- Any log in will work
+
+Timer:
+- Stats from the game timer are not actually incorporated in the "Stats" tab
+
+General:
+- "Opponents" and "Rules" tabs unimplemented
+- All groups, opponents, and stats are pre-made
+
+More information can be found here:
+http://bid.berkeley.edu/cs160-fall10/index.php/InteractivePrototype-Group:BetIntruders
