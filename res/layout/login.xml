@@ -14,13 +14,16 @@
   >
   <TextView
     android:id="@+id/welcome_text"
-    android:layout_width="500px"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Welcome to BetterBet the ultime poker supplement!"
-    android:layout_gravity="center_horizontal"
-    android:gravity="center_horizontal"
+    android:text="Welcome to BetterBet, the ultimate poker analyzer!"
+    android:textSize="25px"
+    android:layout_gravity="center"
+    android:gravity="center"
     />
 </LinearLayout>
+<FrameLayout android:id="@+id/FrameLayout01" android:layout_width="wrap_content" android:layout_height="30px"></FrameLayout>
+
 <LinearLayout
   android:layout_width="fill_parent"
   android:layout_height="wrap_content"
@@ -30,10 +33,13 @@
     android:id="@+id/username_text"
     android:layout_width="100px"
     android:layout_height="wrap_content"
+    android:textSize="20sp"
     android:text="Username:"
     android:layout_gravity="center_horizontal"
     android:gravity="center_horizontal"
     />
+    <FrameLayout android:id="@+id/FrameLayout02" android:layout_width="5px" android:layout_height="wrap_content"></FrameLayout>
+    
   <EditText
     android:id="@+id/username_value"
     android:layout_width="100px"
@@ -52,10 +58,13 @@
     android:id="@+id/password_text"
     android:layout_width="100px"
     android:layout_height="wrap_content"
+    android:textSize="20sp"
     android:text="Password:"
     android:layout_gravity="center_horizontal"
     android:gravity="center_horizontal"
     />
+    <FrameLayout android:id="@+id/FrameLayout03" android:layout_width="5px" android:layout_height="wrap_content"></FrameLayout>
+    
   <EditText
     android:id="@+id/password_value"
     android:layout_width="100px"
@@ -65,6 +74,8 @@
     android:layout_gravity="center_horizontal"
     android:gravity="center_horizontal"
     />
+    <FrameLayout android:id="@+id/FrameLayout05" android:layout_width="5px" android:layout_height="wrap_content"></FrameLayout>
+    
   <Button
     android:id="@+id/submit_button"
     android:layout_width="75px"
