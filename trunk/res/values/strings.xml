@@ -12,10 +12,10 @@
     </string-array>
     <string name="chooseWinner">Round winner</string>
     <string-array name="collegeMembers">
-        <item>College</item>
-        <item>Co-Workers</item>
-        <item>Family</item>
-        <item>Friends</item>
-        <item>New Group</item>
+        <item>Albert</item>
+        <item>Karthik</item>
+        <item>Karl</item>
+        <item>Melissa</item>
+        <item>Samantha</item>
     </string-array>
 </resources>
