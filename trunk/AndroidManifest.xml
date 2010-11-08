@@ -13,6 +13,8 @@
 		</activity>
 		<activity android:name="PlayActivity" android:label="Play"
 			android:screenOrientation="landscape" />
+		<activity android:name="InstructionsActivity" android:label="Instructions"
+			android:screenOrientation="landscape" />
 		<activity android:name="StatsActivity" android:label="Stats"
 			android:screenOrientation="landscape" />
 		<activity android:name="OpponentsActivity" android:label="Opponents"
