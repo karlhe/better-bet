@@ -102,7 +102,7 @@ public class StatsActivity extends Activity {
         	loadCharts(selected);
         }
 
-        public void onNothingSelected(AdapterView parent) {
+        public void onNothingSelected(AdapterView<?> parent) {
         }
     }
     
