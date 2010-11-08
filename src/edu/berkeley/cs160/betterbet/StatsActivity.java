@@ -11,6 +11,9 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 public class StatsActivity extends Activity {
+	
+	boolean defaultGroupChanged = false;
+	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stats);
@@ -20,6 +23,7 @@ public class StatsActivity extends Activity {
                 this, R.array.groups, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+        defaultGroupChanged = false;
         spinner.setOnItemSelectedListener(new OnGroupSelectedListener());
         
         loadCharts("college");
@@ -89,8 +93,12 @@ public class StatsActivity extends Activity {
         public void onItemSelected(AdapterView<?> parent,
             View view, int pos, long id) {
         	String selected = parent.getItemAtPosition(pos).toString();
-        	Toast.makeText(parent.getContext(), "You selected the group " +
-              selected, Toast.LENGTH_SHORT).show();
+        	if (defaultGroupChanged) {
+        		Toast.makeText(parent.getContext(), "You selected the group " +
+        				selected, Toast.LENGTH_SHORT).show();
+        	} else {
+        		defaultGroupChanged = true;
+        	}
         	loadCharts(selected);
         }
 
