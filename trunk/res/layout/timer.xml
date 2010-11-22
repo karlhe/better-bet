@@ -59,5 +59,11 @@
 			android:layout_height="wrap_content"
 			android:text="Start Game"
 			/>
+		<Button
+			android:id="@+id/help_button"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="Instructions"
+			/>
 	</LinearLayout>
 </LinearLayout>

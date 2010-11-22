@@ -104,6 +104,7 @@ public class PlayActivity extends Activity {
 	Button gameButton;
 	Button roundButton;
 	Button pauseButton;
+	Button instructionsButton;
 	long pauseTime;
 	boolean isStarted = false;
 	boolean isRunning = false;
@@ -117,6 +118,7 @@ public class PlayActivity extends Activity {
 		gameButton = (Button) findViewById(R.id.game_button);
 		roundButton = (Button) findViewById(R.id.round_button);
 		pauseButton = (Button) findViewById(R.id.pause_button);
+		instructionsButton = (Button) findViewById(R.id.help_button);
 		roundButton.setEnabled(false);
 		pauseButton.setEnabled(false);
 		
@@ -153,6 +155,7 @@ public class PlayActivity extends Activity {
 				selectWinnerAlert.show();
 			}
 		});
+		
 		pauseButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				// Pause Game
@@ -165,6 +168,14 @@ public class PlayActivity extends Activity {
 				}
 			}
 		});
+		
+		instructionsButton.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+	    		Intent myIntent = new Intent(v.getContext(), InstructionsActivity.class);
+	    		startActivityForResult(myIntent,0);
+			}
+		});
+		
 	}
 
 	protected String formatScores() {
