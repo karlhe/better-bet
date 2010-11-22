@@ -35,7 +35,7 @@ public class StatsActivity extends Activity {
     	
         pie_view = (WebView) findViewById(R.id.pie_graph);
         String p_url = "http://chart.apis.google.com/chart?" +
-        "chs=220x150" +
+        "chs=300x200" +
         "&chd=t:" + data[2] + "," + total +
         "&cht=p" + 
         "&chl=Wins" +
@@ -44,7 +44,7 @@ public class StatsActivity extends Activity {
         
         line_view = (WebView) findViewById(R.id.line_graph);
         String l_url = "http://chart.apis.google.com/chart?" +
-        	"chs=220x150" +
+        	"chs=300x200" +
         	"&chd=t:"+data[0]+"|"+data[1] +
         	"&cht=lc" + 
         	"&chdl=Wins|Total" + 
