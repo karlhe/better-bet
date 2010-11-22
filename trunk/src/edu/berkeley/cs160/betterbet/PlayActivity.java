@@ -105,6 +105,7 @@ public class PlayActivity extends Activity {
 	Button roundButton;
 	Button pauseButton;
 	Button instructionsButton;
+	TextView runningStats;
 	long pauseTime;
 	boolean isStarted = false;
 	boolean isRunning = false;
@@ -119,6 +120,7 @@ public class PlayActivity extends Activity {
 		roundButton = (Button) findViewById(R.id.round_button);
 		pauseButton = (Button) findViewById(R.id.pause_button);
 		instructionsButton = (Button) findViewById(R.id.help_button);
+		runningStats = (TextView) findViewById(R.id.running_stats);
 		roundButton.setEnabled(false);
 		pauseButton.setEnabled(false);
 		
@@ -134,6 +136,7 @@ public class PlayActivity extends Activity {
 			if (scores.containsKey(playerList[player])) current = scores.get(playerList[player]);
 			scores.put(playerList[player], current+1);
 			restartRound();
+			runningStats.setText(formatScores(false));
 		}
 		});
 		final AlertDialog selectWinnerAlert = builder.create();
@@ -178,20 +181,23 @@ public class PlayActivity extends Activity {
 		
 	}
 
-	protected String formatScores() {
+	protected String formatScores(boolean full) {
 		Object[] keys = scores.keySet().toArray();
 		Object[] values = scores.values().toArray();
+		Integer totalScore = 0;
 		String rtn = "";
 		if (keys.length > 0) {
-			rtn += "Player Scores:\n";
+			//rtn += "Player Scores:\n";
 			for (int i=0; i<keys.length; i++) {
 				rtn += keys[i].toString() + " : " + values[i].toString() + "\n";
+				totalScore += Integer.parseInt(values[i].toString());
 			}
+			rtn = "Total Wins: "+totalScore.toString()+"\n" + rtn;
 		} else {
 			rtn += "No scores were recorded.\n";
 		}
 		
-		rtn += "\nTotal Game Time: "+gameTimer.getText();
+		if (full) rtn += "\nTotal Game Time: "+gameTimer.getText();
 		return rtn;
 	}
 
@@ -218,7 +224,7 @@ public class PlayActivity extends Activity {
 		isRunning = false;
 		isStarted = false;
 		
-		Toast.makeText(getApplicationContext(), formatScores(), Toast.LENGTH_LONG).show();
+		Toast.makeText(getApplicationContext(), formatScores(true), Toast.LENGTH_LONG).show();
 		setGroupSelectMode();
 	}
 	
