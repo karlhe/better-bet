@@ -37,6 +37,7 @@ public class StatsActivity extends Activity {
         String p_url = "http://chart.apis.google.com/chart?" +
         "chs=300x200" +
         "&chd=t:" + data[2] + "," + total +
+        "&chco=009900,cc0000" +
         "&cht=p" + 
         "&chl=Wins" +
         "&chld=Wins";
@@ -49,7 +50,7 @@ public class StatsActivity extends Activity {
         	"&cht=lc" + 
         	"&chdl=Wins|Total" + 
         	"&chdlp=b" + 
-        	"&chco=f79c00,444444" +
+        	"&chco=009900,444444" +
         	"&chma=10,10,10,10|5,5";
         line_view.loadUrl(l_url);
         
