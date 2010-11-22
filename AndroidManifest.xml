@@ -11,6 +11,7 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+		<activity android:name=".SetPassword" android:screenOrientation="landscape"></activity>
 		<activity android:name="PlayActivity" android:label="Play"
 			android:screenOrientation="landscape" />
 		<activity android:name="InstructionsActivity" android:label="Instructions"

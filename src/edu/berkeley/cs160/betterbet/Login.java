@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.Toast;
+import android.content.Intent;
 
 public class Login extends Activity {
 	// I'll put this in another class later. -ML
@@ -19,6 +20,9 @@ public class Login extends Activity {
         
         Button submitButton = (Button)findViewById(R.id.submit_button);
         submitButton.setOnClickListener(submitButtonListener);
+        
+        Button passwordButton = (Button)findViewById(R.id.acct_button);
+        passwordButton.setOnClickListener(passwordButtonListener);
     }
     
     private OnClickListener submitButtonListener = new OnClickListener () {
@@ -26,6 +30,14 @@ public class Login extends Activity {
     		setContentView(R.layout.main);
     	}
     };
+    
+    private OnClickListener passwordButtonListener = new OnClickListener () {
+    	public void onClick(View v) {
+    		Intent myIntent = new Intent(v.getContext(), SetPassword.class);
+    		startActivityForResult(myIntent,0);
+    	}
+    };
+    
     public class MyOnItemSelectedListener implements OnItemSelectedListener {
 
         public void onItemSelected(AdapterView<?> parent,

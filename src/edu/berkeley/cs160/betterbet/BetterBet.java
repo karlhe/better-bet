@@ -18,12 +18,22 @@ public class BetterBet extends Activity {
         
         Button submitButton = (Button)findViewById(R.id.submit_button);
         submitButton.setOnClickListener(submitButtonListener);
+        
+        Button passwordButton = (Button)findViewById(R.id.acct_button);
+        passwordButton.setOnClickListener(passwordButtonListener);
     }
     
     private OnClickListener submitButtonListener = new OnClickListener () {
     	public void onClick(View v) {
     		Intent i = new Intent().setClass(BetterBet.this, MenuActivity.class);
     		startActivity(i);
+    	}
+    };
+    
+    private OnClickListener passwordButtonListener = new OnClickListener () {
+    	public void onClick(View v) {
+    		Intent myIntent = new Intent(v.getContext(), SetPassword.class);
+    		startActivityForResult(myIntent,0);
     	}
     };
     
