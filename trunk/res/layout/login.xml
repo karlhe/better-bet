@@ -19,16 +19,6 @@
 		android:layout_gravity="center"
 		android:gravity="center" />
 
-	<TextView android:id="@+id/username_text"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:textSize="15sp" android:text="Username:"
-		android:layout_gravity="left" android:gravity="left" />
-
-	<EditText android:id="@+id/username_value"
-		android:layout_width="fill_parent" android:layout_height="40px"
-		android:textSize="12sp" android:layout_gravity="left"
-		android:gravity="left" />
-
 	<TextView android:id="@+id/password_text"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:textSize="15sp" android:text="Password:"
@@ -58,7 +48,7 @@ android:layout_alignParentRight="true"
 android:id="@+id/acct_button"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:text="Create Account"
+android:text="Set Password"
 android:layout_alignParentTop="true"
 android:layout_alignParentLeft="true"
 >

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+android:id="@+id/widget42"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android"
+>
+<TextView
+android:id="@+id/password_text"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Choose your password:"
+android:textSize="15sp"
+android:layout_alignParentTop="true"
+android:layout_alignParentLeft="true"
+>
+</TextView>
+<EditText
+android:id="@+id/password_value"
+android:layout_width="fill_parent"
+android:layout_height="40px"
+android:textSize="12sp"
+android:password="true"
+android:layout_below="@+id/password_text"
+android:layout_alignParentLeft="true"
+>
+</EditText>
+<Button
+android:id="@+id/submit_button"
+android:layout_width="75px"
+android:layout_height="wrap_content"
+android:text="Enter!"
+android:layout_below="@+id/password_value"
+android:layout_alignParentRight="true"
+>
+</Button>
+</RelativeLayout>
