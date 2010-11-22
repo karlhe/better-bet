@@ -10,24 +10,6 @@
 		android:layout_height="wrap_content"
 		android:orientation="vertical">
 		<TextView
-			android:id="@+id/round_desc"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="Round Time:"
-			/>
-		<Chronometer
-			android:id="@+id/round_timer"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="2dp"
-			android:layout_marginBottom="5dp"
-			android:paddingLeft="15dp"
-			android:paddingRight="15dp"
-			android:background="#FFFFFF"
-			android:textColor="#000000"
-			android:textSize="60sp"
-			/>
-		<TextView
 			android:id="@+id/total_desc"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -37,13 +19,13 @@
 			android:id="@+id/game_timer"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginTop="5dp"
-			android:layout_marginBottom="10dp"
-			android:paddingLeft="10dp"
-			android:paddingRight="10dp"
+			android:layout_marginTop="2dp"
+			android:layout_marginBottom="5dp"
+			android:paddingLeft="15dp"
+			android:paddingRight="15dp"
 			android:background="#FFFFFF"
 			android:textColor="#000000"
-			android:textSize="30sp"
+			android:textSize="60sp"
 			/>
 		<Button
 			android:id="@+id/pause_button"
