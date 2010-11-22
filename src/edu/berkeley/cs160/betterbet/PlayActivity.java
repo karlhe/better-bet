@@ -101,7 +101,6 @@ public class PlayActivity extends Activity {
 //	}
 
 	Chronometer gameTimer;
-	Chronometer roundTimer;
 	Button gameButton;
 	Button roundButton;
 	Button pauseButton;
@@ -115,7 +114,6 @@ public class PlayActivity extends Activity {
 	public void setTimerMode() {
 		setContentView(R.layout.timer);
 		gameTimer = (Chronometer) findViewById(R.id.game_timer);
-		roundTimer = (Chronometer) findViewById(R.id.round_timer);
 		gameButton = (Button) findViewById(R.id.game_button);
 		roundButton = (Button) findViewById(R.id.round_button);
 		pauseButton = (Button) findViewById(R.id.pause_button);
@@ -194,8 +192,6 @@ public class PlayActivity extends Activity {
 		
 		gameTimer.setBase(SystemClock.elapsedRealtime());
 		gameTimer.start();
-		roundTimer.setBase(SystemClock.elapsedRealtime());
-		roundTimer.start();
 		
 		isRunning = true;
 		isStarted = true;
@@ -207,7 +203,6 @@ public class PlayActivity extends Activity {
 		gameButton.setText("Start Game");
 		
 		gameTimer.stop();
-		roundTimer.stop();
 		
 		isRunning = false;
 		isStarted = false;
@@ -217,7 +212,6 @@ public class PlayActivity extends Activity {
 	}
 	
 	protected void pauseGame() {
-		roundTimer.stop();
 		gameTimer.stop();
 		
 		pauseTime = SystemClock.elapsedRealtime();
@@ -227,8 +221,6 @@ public class PlayActivity extends Activity {
 	
 	protected void resumeGame() {
 		long difference = SystemClock.elapsedRealtime() - pauseTime;
-		roundTimer.setBase(roundTimer.getBase() + difference);
-		roundTimer.start();
 		gameTimer.setBase(gameTimer.getBase() + difference);
 		gameTimer.start();
 		
@@ -239,8 +231,6 @@ public class PlayActivity extends Activity {
 	protected void restartRound() {
 		pauseButton.setText("Pause");
 		gameTimer.start();
-		roundTimer.setBase(SystemClock.elapsedRealtime());
-		roundTimer.start();
 		
 		isRunning = true;
 	}
