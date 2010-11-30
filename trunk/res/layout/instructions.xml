@@ -21,7 +21,13 @@
 		android:layout_height="12sp"
 		/>
 	<TextView
-		android:text="Per round, select the winner from a drop-down menu. There are two timers, the round and game timer. Available buttons are:"  
+		android:text="This is the live game timer, used while you are playing poker. At the end of every round, press 'Select Round Winner' and pick who won. These stats will be saved and displayed in the Stats tab."  
+		android:textSize="16sp"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		/>
+	<TextView
+		android:text="Available buttons are:"  
 		android:textSize="16sp"
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content"
@@ -31,25 +37,37 @@
 		android:layout_height="12sp"
 		/>
 	<TextView
-		android:text="1. GAME: both timers begin, indicating the game has started."
+		android:text="- Start Game: Timer begins, indicating the game has started."
 		android:textSize="16sp"
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content"
 		/>
 	<TextView
-		android:text="2. START ROUND: resets the round timer. The game timer will continue." 
+		android:text="- End Game: When the game has ended, press this to see the game summary and reset the timer."
 		android:textSize="16sp"
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content"
 		/>
 	<TextView
-		android:text="3. PAUSE: both timers pause."
+		android:text="- Instructions: If you forget how to use the timer, you can read these instructions again."
 		android:textSize="16sp"
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content"
 		/>
 	<TextView
-		android:text="4. RESUME: both timers resume."
+		android:text="- Select Round Winner: When a round ends, press this button to choose the winner of the round." 
+		android:textSize="16sp"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		/>
+	<TextView
+		android:text="- Pause: Timer pauses."
+		android:textSize="16sp"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		/>
+	<TextView
+		android:text="- Resume: Timer resumes."
 		android:textSize="16sp"
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content"
