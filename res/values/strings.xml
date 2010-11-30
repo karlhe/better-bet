@@ -12,6 +12,7 @@
     </string-array>
     <string name="chooseWinner">Select Round Winner</string>
     <string-array name="collegeMembers">
+    	<item>Me</item>
         <item>Albert</item>
         <item>Karthik</item>
         <item>Karl</item>
