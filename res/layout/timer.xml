@@ -74,7 +74,7 @@
 			android:id="@+id/round_button"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:text="End Round"
+			android:text="Select Round Winner"
 			android:clickable="false"
 			/>
 		<Button
