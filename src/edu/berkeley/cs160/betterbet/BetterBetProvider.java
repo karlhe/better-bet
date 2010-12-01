@@ -29,16 +29,16 @@ public class BetterBetProvider extends ContentProvider {
 	private DatabaseHelper dbHelper;
 	private static final UriMatcher sUriMatcher = buildUriMatcher();
 	
-	public static String AUTHORITY = "edu.berkeley.cs160.betterbet.DatabaseProvider";
-	public static final Uri PLAYERS_URI = Uri.parse("content://" + AUTHORITY + "/users");
+	public static String AUTHORITY = "edu.berkeley.cs160.betterbet.BetterBetProvider";
+	public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/players");
 	private static HashMap<String, String> sPlayersProjectionMap;
 	private static final int GET_PLAYERS = 0;
 	private static final int GET_PLAYER = 1;
 	
 	private static UriMatcher buildUriMatcher() {
 		UriMatcher matcher =  new UriMatcher(UriMatcher.NO_MATCH);
-		matcher.addURI(AUTHORITY, "players", GET_PLAYERS);
-		matcher.addURI(AUTHORITY, "players/#", GET_PLAYER);
+		//matcher.addURI(AUTHORITY, "players", GET_PLAYERS);
+		//matcher.addURI(AUTHORITY, "players/#", GET_PLAYER);
 		return matcher;
 	}
 	
