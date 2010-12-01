@@ -60,7 +60,7 @@
 				android:textStyle="bold"
 				android:text="Unlock"
 				android:layout_weight="1"
-				android:layout_gravity="bottom"
+				android:background="@drawable/btn_green"
 				/>
 		</LinearLayout>
 	</LinearLayout>
