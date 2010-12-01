@@ -35,17 +35,24 @@ public class StatsActivity extends Activity {
     	
         pie_view = (WebView) findViewById(R.id.pie_graph);
         String p_url = "http://chart.apis.google.com/chart?" +
-        "chs=300x200" +
+        "chtt=Win Percentage" +
+        "&chts=000000,20" +
+        "&chs=300x200" +
         "&chd=t:" + data[2] + "," + total +
         "&chco=009900,cc0000" +
         "&cht=p" + 
-        "&chl=Wins" +
+        "&chl=Win: " + data[2] + "|Loss: " + total +
         "&chld=Wins";
         pie_view.loadUrl(p_url);
         
         line_view = (WebView) findViewById(R.id.line_graph);
         String l_url = "http://chart.apis.google.com/chart?" +
-        	"chs=300x200" +
+        	"chtt=Win Rate Over Time" +
+        	"&chts=000000,20" +
+        	"&chxt=x,x,y,y" +
+        	"&chxl=1:|Month|3:|Games" +
+        	"&chxr=0,1,12,1" +
+        	"&chs=300x200" +
         	"&chd=t:"+data[0]+"|"+data[1] +
         	"&cht=lc" + 
         	"&chdl=Wins|Total" + 
