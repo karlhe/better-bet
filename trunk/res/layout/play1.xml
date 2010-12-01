@@ -1,28 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content"
-  android:orientation="horizontal"
-  android:padding="5dp">
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_gravity="center_horizontal"
+	android:orientation="horizontal"
+	android:layout_marginTop="50dp"
+	android:padding="5dp">
 <Spinner
-  android:id="@+id/GroupSpinner" 
-  android:layout_width="wrap_content" 
-  android:layout_height="wrap_content"
-  android:prompt="@string/chooseGroup"
-  />
+	android:id="@+id/GroupSpinner" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"
+	android:prompt="@string/chooseGroup"
+	android:layout_gravity="center_vertical"
+	/>
 <Button
-  android:id="@+id/instrButton"
-  android:text="Instructions"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content"
-  />
+	android:id="@+id/instrButton"
+	android:text="Instructions"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_gravity="center_vertical"
+	android:paddingLeft="20dp"
+	android:paddingRight="20dp"
+	/>
 <Button
-  android:id="@+id/playButton"
-  android:text="Play"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content"
-  android:paddingLeft="30sp"
-  android:paddingRight="30sp"
-  />
+	android:id="@+id/playButton"
+	android:text="Play"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:paddingLeft="40dp"
+	android:paddingRight="40dp"
+	android:paddingTop="20dp"
+	android:paddingBottom="20dp"
+	android:textStyle="bold"
+	android:textSize="18sp"
+	android:layout_gravity="center_vertical"
+	/>
 </LinearLayout>
