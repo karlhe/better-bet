@@ -3,18 +3,17 @@ package edu.berkeley.cs160.betterbet;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+	private static final String DATABASE_NAME = "betterbet.db";
+    private static final int DATABASE_VERSION = 1;
 	private static final String PLAYERS_TABLE_NAME = "players";
 	private static final String GROUPS_TABLE_NAME = "groups";
 	private static final String MEMBERSHIPS_TABLE_NAME = "memberships";
 	private static final String STATS_TABLE_NAME = "statistics";
 	
-	public DatabaseHelper(Context context, String name, CursorFactory factory,
-			int version) {
-		super(context, name, factory, version);
-		// TODO Auto-generated constructor stub
+	public DatabaseHelper(Context context) {
+		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
 
 	@Override
@@ -37,7 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				+ "group_id INTEGER,"
 				+ "wins INTEGER,"
 				+ "games INTEGER,"
-				+ "PRIMARY KEY (player_id, group_id);"
+				+ "PRIMARY KEY (player_id, group_id) );"
 				);
 	}
 
@@ -46,5 +45,4 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		// TODO Auto-generated method stub
 
 	}
-
 }
