@@ -19,7 +19,7 @@ public class TexasActivity extends Activity {
 
         mWebView = (WebView) findViewById(R.id.webview);
         mWebView.getSettings().setJavaScriptEnabled(true);
-        mWebView.loadUrl("http://www.poker.com");
+        mWebView.loadUrl("http://en.wikipedia.org/wiki/Texas_hold_'em");
     }
     
     @Override
