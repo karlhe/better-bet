@@ -20,10 +20,12 @@
         <item>Samantha</item>
     </string-array>
     <string-array name="opponentsArray">
-        <item>Albert Tseng</item>
+    	<item>John Canny</item>
         <item>Karl He</item>
         <item>Karthik Jagadeesh</item>
         <item>Melissa Lim</item>
         <item>Samantha Paras</item>
+        <item>Anuj Tewari</item>
+        <item>Albert Tseng</item>
         </string-array>
 </resources>
