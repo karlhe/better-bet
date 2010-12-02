@@ -1,7 +1,6 @@
 package edu.berkeley.cs160.betterbet;
 
 import android.app.Activity;
-import android.app.ListActivity;
 import android.view.KeyEvent;
 import android.webkit.WebView;
 import android.os.Bundle;
