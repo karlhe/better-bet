@@ -19,7 +19,7 @@ public class OpponentsActivity extends ListActivity {
         lv.setTextFilterEnabled(true);
          
         String[] countries = getResources().getStringArray(R.array.opponentsArray);
-        setListAdapter(new ArrayAdapter<String>(this, R.layout.opponents, countries));
+        //setListAdapter(new ArrayAdapter<String>(this, R.layout.opponents, countries));
         
         lv.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
