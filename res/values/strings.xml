@@ -19,4 +19,11 @@
         <item>Melissa</item>
         <item>Samantha</item>
     </string-array>
+    <string-array name="opponentsArray">
+        <item>Albert Tseng</item>
+        <item>Karl He</item>
+        <item>Karthik Jagadeesh</item>
+        <item>Melissa Lim</item>
+        <item>Samantha Paras</item>
+        </string-array>
 </resources>
