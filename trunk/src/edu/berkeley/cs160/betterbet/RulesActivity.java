@@ -14,7 +14,7 @@ public class RulesActivity extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 	  super.onCreate(savedInstanceState);
 
-	  setListAdapter(new ArrayAdapter<String>(this, R.layout.rules, COUNTRIES));
+	  setListAdapter(new ArrayAdapter<String>(this, R.layout.rules, GAMES));
 
 	  ListView lv = getListView();
 	  lv.setTextFilterEnabled(true);
@@ -34,7 +34,7 @@ public class RulesActivity extends ListActivity {
 	  
 	}
 	
-	static final String[] COUNTRIES = new String[] {
+	static final String[] GAMES = new String[] {
 	    "Texas Hold'em", 
 	    "Omaha Poker", 
 	    "7 Card Stud", 
@@ -46,25 +46,25 @@ public class RulesActivity extends ListActivity {
 	
 	public void setRules(int position, View v) {
     	if (position == 0) {
-    		Intent i = new Intent().setClass(v.getContext(), TexasActivity.class);
+    		Intent i = new Intent().setClass(RulesActivity.this, TexasActivity.class);
     		startActivity(i);
     	} else if (position == 1) {
-    		Intent i = new Intent().setClass(v.getContext(), OmahaActivity.class);
+    		Intent i = new Intent().setClass(RulesActivity.this, OmahaActivity.class);
     		startActivity(i);
     	} else if (position == 2) {
-    		Intent i = new Intent().setClass(v.getContext(), SevenCardActivity.class);
+    		Intent i = new Intent().setClass(RulesActivity.this, SevenCardActivity.class);
     		startActivity(i);
     	} else if (position == 3) {
-    		Intent i = new Intent().setClass(v.getContext(), FiveCardActivity.class);
+    		Intent i = new Intent().setClass(RulesActivity.this, FiveCardActivity.class);
     		startActivity(i);
     	} else if (position == 4) {
-    		Intent i = new Intent().setClass(v.getContext(), CaribbeanActivity.class);
+    		Intent i = new Intent().setClass(RulesActivity.this, CaribbeanActivity.class);
     		startActivity(i);
     	} else if (position == 5) {
-    		Intent i = new Intent().setClass(v.getContext(), CountdownActivity.class);
+    		Intent i = new Intent().setClass(RulesActivity.this, CountdownActivity.class);
     		startActivity(i);
     	} else if (position == 6) {
-    		Intent i = new Intent().setClass(v.getContext(), FollowQueenActivity.class);
+    		Intent i = new Intent().setClass(RulesActivity.this, FollowQueenActivity.class);
     		startActivity(i);
     	} 
     }
