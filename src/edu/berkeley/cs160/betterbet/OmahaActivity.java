@@ -16,7 +16,7 @@ WebView mWebView;
 
         mWebView = (WebView) findViewById(R.id.webview);
         mWebView.getSettings().setJavaScriptEnabled(true);
-        mWebView.loadUrl("http://www.poker.com");
+        mWebView.loadUrl("http://en.wikipedia.org/wiki/Omaha_poker");
     }
     
     @Override

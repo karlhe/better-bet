@@ -23,12 +23,6 @@ public class RulesActivity extends ListActivity {
 	    public void onItemClick(AdapterView<?> parent, View view,
 	        int position, long id) {
 	    	setRules(position, view);
-	    	
-	    	// When clicked, show a toast with the TextView text
-	    	/*
-	    	Toast.makeText(getApplicationContext(), ((TextView) view).getText(),
-	          Toast.LENGTH_SHORT).show();
-	    	*/
 	    }
 	  });
 	  
@@ -68,53 +62,5 @@ public class RulesActivity extends ListActivity {
     		startActivity(i);
     	} 
     }
-    /*
-    private OnClickListener fiveCardButtonListener = new OnClickListener () {
-    	public void onClick(View v) {
-    		Intent i = new Intent().setClass(v.getContext(), FiveCardActivity.class);
-    		startActivity(i);
-    	}
-    };
     
-    private OnClickListener followQueenButtonListener = new OnClickListener () {
-    	public void onClick(View v) {
-    		Intent i = new Intent().setClass(v.getContext(), FollowQueenActivity.class);
-    		startActivity(i);
-    	}
-    };
-    private OnClickListener texasButtonListener = new OnClickListener () {
-    	public void onClick(View v) {
-    		Intent i = new Intent().setClass(v.getContext(), TexasActivity.class);
-    		startActivity(i);
-    	}
-    };
-    
-    private OnClickListener caribbeanButtonListener = new OnClickListener () {
-    	public void onClick(View v) {
-    		Intent i = new Intent().setClass(v.getContext(), CaribbeanActivity.class);
-    		startActivity(i);
-    	}
-    };
-    
-    private OnClickListener omahaButtonListener = new OnClickListener () {
-    	public void onClick(View v) {
-    		Intent i = new Intent().setClass(v.getContext(), OmahaActivity.class);
-    		startActivity(i);
-    	}
-    };
-    
-    private OnClickListener sevenCardButtonListener = new OnClickListener () {
-    	public void onClick(View v) {
-    		Intent i = new Intent().setClass(v.getContext(), SevenCardActivity.class);
-    		startActivity(i);
-    	}
-    };
-    
-    private OnClickListener countdownButtonListener = new OnClickListener () {
-    	public void onClick(View v) {
-    		Intent i = new Intent().setClass(v.getContext(), CountdownActivity.class);
-    		startActivity(i);
-    	}
-    };
-    */
 }
