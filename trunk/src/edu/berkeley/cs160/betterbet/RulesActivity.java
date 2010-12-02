@@ -22,9 +22,8 @@ public class RulesActivity extends ListActivity {
 	  lv.setOnItemClickListener(new OnItemClickListener() {
 	    public void onItemClick(AdapterView<?> parent, View view,
 	        int position, long id) {
-	    	//setRules(position, view);
-	    	Intent i = new Intent().setClass(view.getContext(), TexasActivity.class);
-    		startActivity(i);
+	    	setRules(position, view);
+	    	
 	    	// When clicked, show a toast with the TextView text
 	    	/*
 	    	Toast.makeText(getApplicationContext(), ((TextView) view).getText(),
@@ -49,9 +48,7 @@ public class RulesActivity extends ListActivity {
     	if (position == 0) {
     		Intent i = new Intent().setClass(v.getContext(), TexasActivity.class);
     		startActivity(i);
-    	} 
-    	/*
-    	else if (position == 1) {
+    	} else if (position == 1) {
     		Intent i = new Intent().setClass(v.getContext(), OmahaActivity.class);
     		startActivity(i);
     	} else if (position == 2) {
@@ -70,7 +67,6 @@ public class RulesActivity extends ListActivity {
     		Intent i = new Intent().setClass(v.getContext(), FollowQueenActivity.class);
     		startActivity(i);
     	} 
-    	*/
     }
     /*
     private OnClickListener fiveCardButtonListener = new OnClickListener () {
