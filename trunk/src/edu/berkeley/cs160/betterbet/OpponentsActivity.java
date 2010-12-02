@@ -1,5 +1,4 @@
 package edu.berkeley.cs160.betterbet;
-import android.app.Activity;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,8 +17,8 @@ public class OpponentsActivity extends ListActivity {
         ListView lv = getListView();
         lv.setTextFilterEnabled(true);
          
-        String[] countries = getResources().getStringArray(R.array.opponentsArray);
-        //setListAdapter(new ArrayAdapter<String>(this, R.layout.opponents, countries));
+        String[] opponents = getResources().getStringArray(R.array.opponentsArray);
+        setListAdapter(new ArrayAdapter<String>(this, R.layout.opponents, opponents));
         
         lv.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
