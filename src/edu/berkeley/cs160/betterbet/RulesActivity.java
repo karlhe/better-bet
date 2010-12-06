@@ -3,6 +3,7 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -40,25 +41,25 @@ public class RulesActivity extends ListActivity {
 	
 	public void setRules(int position, View v) {
     	if (position == 0) {
-    		Intent i = new Intent().setClass(RulesActivity.this, TexasActivity.class);
+    		Intent i = new Intent().setClass(v.getContext(), TexasActivity.class);
     		startActivity(i);
     	} else if (position == 1) {
-    		Intent i = new Intent().setClass(RulesActivity.this, OmahaActivity.class);
+    		Intent i = new Intent().setClass(v.getContext(), OmahaActivity.class);
     		startActivity(i);
     	} else if (position == 2) {
-    		Intent i = new Intent().setClass(RulesActivity.this, SevenCardActivity.class);
+    		Intent i = new Intent().setClass(v.getContext(), SevenCardActivity.class);
     		startActivity(i);
     	} else if (position == 3) {
-    		Intent i = new Intent().setClass(RulesActivity.this, FiveCardActivity.class);
+    		Intent i = new Intent().setClass(v.getContext(), FiveCardActivity.class);
     		startActivity(i);
     	} else if (position == 4) {
-    		Intent i = new Intent().setClass(RulesActivity.this, CaribbeanActivity.class);
+    		Intent i = new Intent().setClass(v.getContext(), CaribbeanActivity.class);
     		startActivity(i);
     	} else if (position == 5) {
-    		Intent i = new Intent().setClass(RulesActivity.this, CountdownActivity.class);
+    		Intent i = new Intent().setClass(v.getContext(), CountdownActivity.class);
     		startActivity(i);
     	} else if (position == 6) {
-    		Intent i = new Intent().setClass(RulesActivity.this, FollowQueenActivity.class);
+    		Intent i = new Intent().setClass(v.getContext(), FollowQueenActivity.class);
     		startActivity(i);
     	} 
     }
