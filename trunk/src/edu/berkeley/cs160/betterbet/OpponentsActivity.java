@@ -1,3 +1,5 @@
+// reg list view
+
 package edu.berkeley.cs160.betterbet;
 import android.app.ListActivity;
 import android.os.Bundle;
