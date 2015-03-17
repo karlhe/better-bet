@@ -1,0 +1,1 @@
+An Android application for assisting Poker players during and between games.
